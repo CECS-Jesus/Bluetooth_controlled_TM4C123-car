@@ -44,25 +44,20 @@ Use a Bluetooth terminal application to send commands:
 
 ## Connection Configuration
 
+<center>
+
 | HC-05 Bluetooth Module | Launchpad         |
-|------------------------|-------------------|
+|:----------------------:|:-----------------:|
 | State                  | Leave unconnected |
-| RX                     | UART1 TX          |
-| TX                     | UART1 RX          |
+| RX                     | PC5               |
+| TX                     | PC4               |
 | GND                    | GND               |
-| VCC                    | 5v (VBUS)         |
-| EN/KEY                 | 3.3v or 5v        |
+| VCC                    | VBUS              |
+| EN1                    | 3.3v              |
 
 ---
 
-You can add more sections like "Deliverables" and "Contributing" as needed.
-
-
-<center>
-
-| Header 1 | Header 2 |
-|:--------:|:--------:|
-| Cell 1A  | Cell 1B  |
-| Cell 2A  | Cell 2B  |
 
 </center>
+
+
