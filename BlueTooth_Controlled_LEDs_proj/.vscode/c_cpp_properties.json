@@ -3,13 +3,13 @@
         {
             "name": "BlueTooth",
             "includePath": [
-                "c:\\Users\\KevM9\\OneDrive\\CSULB\\CSULB Fall 2023\\CECS 447",
-                "c:\\Users\\KevM9\\OneDrive\\CSULB",
+                "c:\\Users\\KevM9\\OneDrive\\CSULB\\CSULB Fall 2023\\CECS 447\\Bluetooth_controlled_TM4C123-car",
+                "c:\\Users\\KevM9\\OneDrive\\CSULB\\CSULB Fall 2023",
                 "C:\\Keil_v5\\ARM\\ARMCLANG\\include",
                 "C:\\Keil_v5\\ARM\\ARMCLANG\\include\\arm_linux",
                 "C:\\Keil_v5\\ARM\\ARMCLANG\\include\\arm_linux_compat",
                 "C:\\Keil_v5\\ARM\\ARMCLANG\\include\\libcxx",
-                "c:\\Users\\KevM9\\OneDrive\\CSULB\\CSULB Fall 2023\\CECS 447\\BlueTooth Controlled LEDs"
+                "c:\\Users\\KevM9\\OneDrive\\CSULB\\CSULB Fall 2023\\CECS 447\\Bluetooth_controlled_TM4C123-car\\BlueTooth_Controlled_LEDs_proj"
             ],
             "defines": [
                 "rvmdk",
