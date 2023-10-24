@@ -49,8 +49,8 @@ Use a Bluetooth terminal application to send commands:
 | HC-05 Bluetooth Module | Launchpad         |
 |:----------------------:|:-----------------:|
 | State                  | Leave unconnected |
-| RX                     | UART1 TX          |
-| TX                     | UART1 RX          |
+| RX                     | PC5               |
+| TX                     | PC4               |
 | GND                    | GND               |
 | VCC                    | VBUS              |
 | EN1                    | 3.3v              |
