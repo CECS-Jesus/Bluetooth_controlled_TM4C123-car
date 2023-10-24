@@ -1,7 +1,7 @@
 {
     "configurations": [
         {
-            "name": "HW_PWM_Car",
+            "name": "RoboCar",
             "includePath": [
                 "c:\\Users\\KevM9\\OneDrive\\CSULB\\CSULB Fall 2023\\CECS 447\\Bluetooth_controlled_TM4C123-car",
                 "c:\\Users\\KevM9\\OneDrive\\CSULB\\CSULB Fall 2023",
@@ -9,7 +9,7 @@
                 "C:\\Keil_v5\\ARM\\ARMCLANG\\include\\arm_linux",
                 "C:\\Keil_v5\\ARM\\ARMCLANG\\include\\arm_linux_compat",
                 "C:\\Keil_v5\\ARM\\ARMCLANG\\include\\libcxx",
-                "c:\\Users\\KevM9\\OneDrive\\CSULB\\CSULB Fall 2023\\CECS 447\\Bluetooth_controlled_TM4C123-car\\Hardware_PWM_Car_proj"
+                "c:\\Users\\KevM9\\OneDrive\\CSULB\\CSULB Fall 2023\\CECS 447\\Bluetooth_controlled_TM4C123-car\\RoboCar_proj"
             ],
             "defines": [
                 "rvmdk",
