@@ -18,20 +18,20 @@
 void UART0_Init(void){
 	// Activate Clocks
 	SYSCTL_RCGC1_R |= SYSCTL_RCGC1_UART0; // activate UART0
-  SYSCTL_RCGC2_R |= SYSCTL_RCGC2_GPIOA; // activate port A	
+	SYSCTL_RCGC2_R |= SYSCTL_RCGC2_GPIOA; // activate port A	
 	
 	UART0_CTL_R &= ~UART_CTL_UARTEN;      // disable UART
-  UART0_IBRD_R = 17;                    // IBRD = int(16,000,000 / (16 * 57600)) = int(17.3611111)
-  UART0_FBRD_R = 23;                    // FBRD = round(3611111 * 64) = 23
-                                        // 8 bit word length (no parity bits, one stop bit, FIFOs)
-  UART0_LCRH_R = (UART_LCRH_WLEN_8|UART_LCRH_FEN);
-  UART0_CTL_R |= 0x301;                 // enable UART for both Rx and Tx
-
-  GPIO_PORTA_AFSEL_R |= 0x03;           // enable alt funct on PA1,PA0
-  GPIO_PORTA_DEN_R |= 0x03;             // enable digital I/O on PA1,PA0
-                                        // configure PA1,PA0 as UART0
-  GPIO_PORTA_PCTL_R = (GPIO_PORTA_PCTL_R&0xFFFFFF00)+0x00000011;
-  GPIO_PORTA_AMSEL_R &= ~0x03;          // disable analog functionality on PA1,PA0
+	UART0_IBRD_R = 17;                    // IBRD = int(16,000,000 / (16 * 57600)) = int(17.3611111)
+	UART0_FBRD_R = 23;                    // FBRD = round(3611111 * 64) = 23
+					// 8 bit word length (no parity bits, one stop bit, FIFOs)
+	UART0_LCRH_R = (UART_LCRH_WLEN_8|UART_LCRH_FEN);
+	UART0_CTL_R |= 0x301;                 // enable UART for both Rx and Tx
+	
+	GPIO_PORTA_AFSEL_R |= 0x03;           // enable alt funct on PA1,PA0
+	GPIO_PORTA_DEN_R |= 0x03;             // enable digital I/O on PA1,PA0
+					// configure PA1,PA0 as UART0
+	GPIO_PORTA_PCTL_R = (GPIO_PORTA_PCTL_R&0xFFFFFF00)+0x00000011;
+	GPIO_PORTA_AMSEL_R &= ~0x03;          // disable analog functionality on PA1,PA0
 }
 
 //------------UART0_OutChar------------
@@ -39,8 +39,8 @@ void UART0_Init(void){
 // Input: letter is an 8-bit ASCII character to be transferred
 // Output: none
 void UART0_OutChar(uint8_t data){
-  while((UART0_FR_R&UART_FR_TXFF) != 0);
-  UART0_DR_R = data;
+	while((UART0_FR_R&UART_FR_TXFF) != 0);
+	UART0_DR_R = data;
 }
 
 void UART0_NextLine(void){
@@ -53,9 +53,9 @@ void UART0_NextLine(void){
 // Input: pointer to a NULL-terminated string to be transferred
 // Output: none
 void UART0_OutString(uint8_t *pt){
-  while(*pt){
-    UART0_OutChar(*pt);
-    pt++;
+	while(*pt){
+		UART0_OutChar(*pt);
+		pt++;
   }
 }
 
@@ -64,8 +64,8 @@ void UART0_OutString(uint8_t *pt){
 // Input: none
 // Output: ASCII code for key typed
 uint8_t UART0_InChar(void){
-  while((UART0_FR_R&UART_FR_RXFE) != 0);
-  return((uint8_t)(UART0_DR_R&0xFF));
+	while((UART0_FR_R&UART_FR_RXFE) != 0);
+	return((uint8_t)(UART0_DR_R&0xFF));
 }
 
 
@@ -84,24 +84,24 @@ uint8_t UART0_InChar(void){
 uint16_t UART0_InString(uint8_t *bufPt, uint16_t max) {
 uint16_t length=0;
 uint8_t character;
-  character = UART0_InChar();
-  while(character != CR){
-    if(character == BS){
-      if(length){
-        bufPt--;
-        length--;
-        UART0_OutChar(BS);
-      }
-    }
-    else if(length < max){
-      *bufPt = character;
-      bufPt++;
-      length++;
-      UART0_OutChar(character);
-    }
-    character = UART0_InChar();
-  }
-  *bufPt = 0;
+character = UART0_InChar();
+	while(character != CR){
+		if(character == BS){
+			if(length){
+				bufPt--;
+				length--;
+				UART0_OutChar(BS);
+      			}
+   		 }
+		else if(length < max){
+			*bufPt = character;
+			bufPt++;
+			length++;
+			UART0_OutChar(character);
+    		}
+    		character = UART0_InChar();
+  	}
+  	*bufPt = 0;
 	return length;
 }
 
