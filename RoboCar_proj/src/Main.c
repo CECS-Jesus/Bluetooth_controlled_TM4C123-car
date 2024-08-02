@@ -19,13 +19,13 @@ int main(void) {
 	unsigned char userInput;
 	for (int i = 0; i < MAX_ASCII; i++)
 		moveChoices[i] = InvalidInput;
-	moveChoices['f'] = MoveForward;
-	moveChoices['b'] = MoveBackward;
-	moveChoices['l'] = MoveLeftTurn;
-	moveChoices['r'] = MoveRightTurn;
-	moveChoices['s'] = MoveStop;
-	moveChoices['u'] = IncrementSpeed;
-	moveChoices['d'] = DecrementSpeed;
+		moveChoices['f'] = MoveForward;
+		moveChoices['b'] = MoveBackward;
+		moveChoices['l'] = MoveLeftTurn;
+		moveChoices['r'] = MoveRightTurn;
+		moveChoices['s'] = MoveStop;
+		moveChoices['u'] = IncrementSpeed;
+		moveChoices['d'] = DecrementSpeed;
 
 	while(1) {
 		userInput = UART1_InChar();
